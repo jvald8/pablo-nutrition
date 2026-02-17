@@ -1,0 +1,37 @@
+# Pablo Nutrition - robots.txt
+# Optimized for both traditional and AI search engines (GEO)
+
+User-agent: *
+Allow: /
+
+# Explicitly allow AI search engine bots for GEO optimization
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Sitemap location
+Sitemap: https://pablonutrition.com/sitemap.xml
+
+# Disallow admin/API routes
+Disallow: /api/
+Disallow: /checkout/
