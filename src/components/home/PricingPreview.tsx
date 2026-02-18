@@ -24,7 +24,7 @@ const packages = [
     tagline: "Most popular",
     price: 715,
     monthlyPrice: 380,
-    period: "to start",
+    period: "initial investment",
     features: [
       "Everything in Evaluation",
       "Personalized nutrition guide",
@@ -40,7 +40,7 @@ const packages = [
     tagline: "Maximum results",
     price: 1515,
     monthlyPrice: 950,
-    period: "to start",
+    period: "initial investment",
     features: [
       "Everything in Habit Builder",
       "High-performance training plan",

@@ -15,7 +15,6 @@ const individualServices = [
     productKey: "evaluation",
     name: "Evaluation + Results Report",
     price: 185,
-    originalPrice: 250,
     description: "Know exactly where you stand before making any changes",
     features: [
       "Complete anthropometric evaluation",
@@ -29,9 +28,8 @@ const individualServices = [
   {
     id: "nutrition-guide",
     productKey: "nutritionGuide",
-    name: "Personalized Nutrition Guide",
+    name: "Personalized Nutrition & Habits Guide",
     price: 380,
-    originalPrice: 500,
     description: "A clear roadmap to transform how you eat",
     features: [
       "Personalized nutrition and lifestyle guide",
@@ -48,11 +46,11 @@ const individualServices = [
 const packages = [
   {
     id: "habit-builder",
-    productKey: "habitBuilder",
+    initialProductKey: "habitBuilderInitial",
+    monthlyProductKey: "habitBuilderMonthly",
     name: "Habit Builder",
     tagline: "Silver Package",
     initialPrice: 715,
-    originalPrice: 950,
     monthlyPrice: 380,
     description: "Build sustainable habits with ongoing accountability",
     features: [
@@ -70,11 +68,11 @@ const packages = [
   },
   {
     id: "performance-upgrade",
-    productKey: "performanceUpgrade",
+    initialProductKey: "performanceUpgradeInitial",
+    monthlyProductKey: "performanceUpgradeMonthly",
     name: "Performance Upgrade",
     tagline: "Gold Package",
     initialPrice: 1215,
-    originalPrice: 1500,
     monthlyPrice: 555,
     description: "Deep transformation with nutrition and training integration",
     features: [
@@ -90,13 +88,12 @@ const packages = [
   },
   {
     id: "elite",
-    productKey: "elitePerformance",
+    initialProductKey: "eliteInitial",
+    monthlyProductKey: "eliteMonthly",
     name: "Elite High Performance",
     tagline: "Premium Package",
     initialPrice: 1515,
-    originalPrice: 2000,
     monthlyPrice: 950,
-    hasTax: true,
     description: "Maximum accountability and elite-level support",
     features: [
       "Everything in Performance Upgrade",
@@ -188,14 +185,7 @@ export default function ProgramsPage() {
                 </h3>
                 <p className="mb-4" style={{ color: "#57534e" }}>{service.description}</p>
                 
-                {/* Price with anchor */}
                 <div className="mb-6">
-                  <span 
-                    className="text-lg line-through mr-2"
-                    style={{ color: "#a8a29e" }}
-                  >
-                    ${service.originalPrice}
-                  </span>
                   <span 
                     className="text-3xl sm:text-4xl"
                     style={{ fontFamily: "var(--font-display), Georgia, serif", color: "#1c1917" }}
@@ -203,12 +193,6 @@ export default function ProgramsPage() {
                     ${service.price}
                   </span>
                   <span className="ml-2" style={{ color: "#78716c" }}>one-time</span>
-                  <span 
-                    className="ml-2 text-xs font-semibold px-2 py-0.5 rounded-full"
-                    style={{ backgroundColor: "#dcfce7", color: "#15803d" }}
-                  >
-                    SAVE ${service.originalPrice - service.price}
-                  </span>
                 </div>
                 
                 <ul className="space-y-2 sm:space-y-3 mb-6">
@@ -300,15 +284,8 @@ export default function ProgramsPage() {
                   </p>
                 </div>
 
-                {/* Price with anchor */}
                 <div className="mb-5 sm:mb-6">
                   <div className="flex items-baseline gap-2 flex-wrap">
-                    <span 
-                      className="text-lg line-through"
-                      style={{ color: pkg.highlighted ? "#a8a29e" : "#78716c" }}
-                    >
-                      ${pkg.originalPrice}
-                    </span>
                     <span 
                       className="text-3xl sm:text-4xl"
                       style={{ fontFamily: "var(--font-display), Georgia, serif" }}
@@ -322,15 +299,14 @@ export default function ProgramsPage() {
                         color: pkg.highlighted ? "white" : "#4ade80" 
                       }}
                     >
-                      SAVE ${pkg.originalPrice - pkg.initialPrice}
+                      INITIAL INVESTMENT
                     </span>
                   </div>
                   <p 
                     className="text-sm mt-1"
                     style={{ color: pkg.highlighted ? "#dcfce7" : "#a8a29e" }}
                   >
-                    to start + ${pkg.monthlyPrice}/month after
-                    {pkg.hasTax && " + tax"}
+                    then ${pkg.monthlyPrice}/month subscription
                   </p>
                 </div>
 
@@ -352,7 +328,7 @@ export default function ProgramsPage() {
                 </ul>
 
                 <CheckoutButton 
-                  productKey={pkg.productKey}
+                  productKey={pkg.initialProductKey}
                   className={`block w-full text-center py-2.5 sm:py-3 rounded-full font-medium transition-all ${
                     pkg.highlighted 
                       ? "bg-white text-green-700 hover:bg-green-50" 

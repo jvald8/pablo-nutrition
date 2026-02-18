@@ -6,7 +6,6 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { productKey, customerEmail, customerName } = body;
 
-    // Validate product
     if (!productKey || !PRODUCTS[productKey as ProductKey]) {
       return NextResponse.json(
         { error: "Invalid product selected" },
@@ -17,9 +16,15 @@ export async function POST(request: NextRequest) {
     const product = PRODUCTS[productKey as ProductKey];
     const origin = request.headers.get("origin") || process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
 
+    if (!product.priceId) {
+      return NextResponse.json(
+        { error: "This product is not yet configured. Please contact us directly." },
+        { status: 400 }
+      );
+    }
+
     const stripe = getStripe();
 
-    // Create or retrieve customer for better tracking - per stripe-integration skill
     let customerId: string | undefined;
     if (customerEmail) {
       const existingCustomers = await stripe.customers.list({
@@ -42,58 +47,34 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Build line items with product image - per stripe-integration pattern
-    const lineItems = [
-      {
-        price_data: {
-          currency: "usd" as const,
-          product_data: {
-            name: product.name,
-            description: product.description,
-            // Add images when in production with full URLs
-            ...(process.env.NODE_ENV === "production" && {
-              images: [`${origin}${product.image}`],
-            }),
-          },
-          unit_amount: product.price,
-        },
-        quantity: 1,
-      },
-    ];
-
-    // Create a Stripe checkout session
-    // Using CheckoutSessions API as recommended by stripe-best-practices
     const session = await stripe.checkout.sessions.create({
-      // Enable automatic_payment_methods per stripe-best-practices
-      // Instead of hardcoding payment_method_types
       payment_method_types: ["card"],
-      line_items: lineItems,
+      line_items: [
+        {
+          price: product.priceId,
+          quantity: 1,
+        },
+      ],
       mode: product.mode,
       success_url: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/checkout/cancel`,
       customer: customerId,
-      customer_email: customerId ? undefined : customerEmail, // Only use if no customer
-      // Metadata for linking to your database - per stripe-integration best practice
+      customer_email: customerId ? undefined : customerEmail,
       metadata: {
         productKey,
         customerName: customerName || "",
         source: "website_checkout",
       },
-      // Collect billing address for records
       billing_address_collection: "required",
-      // Phone collection for follow-up
       phone_number_collection: {
         enabled: true,
       },
-      // Custom branding
       custom_text: {
         submit: {
           message: "Your transformation journey begins after payment. Pablo will reach out within 24 hours.",
         },
       },
-      // Allow promotion codes if you set them up
       allow_promotion_codes: true,
-      // Expire after 30 minutes
       expires_at: Math.floor(Date.now() / 1000) + 30 * 60,
     });
 

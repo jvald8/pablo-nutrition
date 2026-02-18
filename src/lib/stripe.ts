@@ -24,52 +24,85 @@ export const stripe = {
   get webhooks() { return getStripe().webhooks; },
 };
 
-// Product/Price configuration with images per stripe-integration skill
+// Product/Price configuration matching actual Stripe products
+// IMPORTANT: Replace the priceId values below with your real Stripe Price IDs
+// Find them at: https://dashboard.stripe.com/products → click product → copy Price ID (starts with "price_")
 export const PRODUCTS = {
   evaluation: {
     name: "Evaluation + Results Report",
     description: "Complete body composition analysis, lab work, and written report with personalized recommendations",
-    price: 18500, // in cents - per stripe-integration best practice
-    image: "/images/pablo-pro.JPG",
+    priceId: process.env.STRIPE_PRICE_EVALUATION || "",
+    displayPrice: 185,
     mode: "payment" as const,
   },
   nutritionGuide: {
-    name: "Personalized Nutrition Guide",
+    name: "Personalized Nutrition & Habits Guide",
     description: "Custom nutrition and lifestyle guide aligned with your goals and daily routine",
-    price: 38000,
-    image: "/images/pablo-pro.JPG",
+    priceId: process.env.STRIPE_PRICE_NUTRITION_GUIDE || "",
+    displayPrice: 380,
     mode: "payment" as const,
   },
-  habitBuilder: {
-    name: "Habit Builder Package",
-    description: "8-week transformation program with weekly calls, accountability, and ongoing support",
-    price: 71500, // Initial payment
-    image: "/images/pablo-pro.JPG",
+  habitBuilderInitial: {
+    name: "Habit Builder - Initial Investment",
+    description: "8-week transformation program — initial investment to get started",
+    priceId: process.env.STRIPE_PRICE_HABIT_BUILDER_INITIAL || "",
+    displayPrice: 715,
     mode: "payment" as const,
-    hasRecurring: true,
-    recurringPrice: 38000,
   },
-  performanceUpgrade: {
-    name: "Performance Upgrade Package",
-    description: "12-week intensive with personalized training plan and nutrition integration",
-    price: 121500,
-    image: "/images/pablo-pro.JPG",
+  habitBuilderMonthly: {
+    name: "Habit Builder - Monthly Subscription",
+    description: "Ongoing monthly support with weekly calls, progress reviews, and adjustments",
+    priceId: process.env.STRIPE_PRICE_HABIT_BUILDER_MONTHLY || "",
+    displayPrice: 380,
+    mode: "subscription" as const,
+  },
+  performanceUpgradeInitial: {
+    name: "Performance Upgrade - Initial Investment",
+    description: "12-week intensive program — initial investment to get started",
+    priceId: process.env.STRIPE_PRICE_PERFORMANCE_INITIAL || "",
+    displayPrice: 1215,
     mode: "payment" as const,
-    hasRecurring: true,
-    recurringPrice: 55500,
   },
-  elitePerformance: {
-    name: "Elite High Performance Package",
+  performanceUpgradeMonthly: {
+    name: "Performance Upgrade - Monthly Subscription",
+    description: "Ongoing monthly support with training integration and nutrition coaching",
+    priceId: process.env.STRIPE_PRICE_PERFORMANCE_MONTHLY || "",
+    displayPrice: 555,
+    mode: "subscription" as const,
+  },
+  eliteInitial: {
+    name: "Elite High Performance - Initial Investment",
+    description: "Premium transformation program — initial investment to get started",
+    priceId: process.env.STRIPE_PRICE_ELITE_INITIAL || "",
+    displayPrice: 1515,
+    mode: "payment" as const,
+  },
+  eliteMonthly: {
+    name: "Elite High Performance - Monthly Subscription",
     description: "Maximum accountability with 2x weekly training sessions and elite-level support",
-    price: 151500,
-    image: "/images/pablo-pro.JPG",
-    mode: "payment" as const,
-    hasRecurring: true,
-    recurringPrice: 95000,
+    priceId: process.env.STRIPE_PRICE_ELITE_MONTHLY || "",
+    displayPrice: 950,
+    mode: "subscription" as const,
   },
 } as const;
 
 export type ProductKey = keyof typeof PRODUCTS;
+
+// Package groupings for display on the programs page
+export const PACKAGES = {
+  habitBuilder: {
+    initial: "habitBuilderInitial" as ProductKey,
+    monthly: "habitBuilderMonthly" as ProductKey,
+  },
+  performanceUpgrade: {
+    initial: "performanceUpgradeInitial" as ProductKey,
+    monthly: "performanceUpgradeMonthly" as ProductKey,
+  },
+  elite: {
+    initial: "eliteInitial" as ProductKey,
+    monthly: "eliteMonthly" as ProductKey,
+  },
+};
 
 // Helper to format price for display
 export function formatPrice(cents: number): string {
