@@ -46,16 +46,16 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <div 
-            className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xl group-hover:scale-105 transition-transform"
+            className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold group-hover:scale-105 transition-transform"
             style={{ backgroundColor: "#16a34a", fontFamily: "var(--font-display), Georgia, serif" }}
           >
-            P
+            N+T
           </div>
           <span 
-            className="text-xl hidden sm:block"
+            className="text-lg hidden sm:block"
             style={{ fontFamily: "var(--font-display), Georgia, serif", color: "#1c1917" }}
           >
-            Pablo Lima
+            Nutrition <span style={{ color: "#16a34a" }}>+</span> Training
           </span>
         </Link>
 

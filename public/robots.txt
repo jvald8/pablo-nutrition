@@ -1,4 +1,4 @@
-# Pablo Nutrition - robots.txt
+# Nutrition Plus Training - robots.txt
 # Optimized for both traditional and AI search engines (GEO)
 
 User-agent: *
@@ -30,7 +30,7 @@ User-agent: Claude-Web
 Allow: /
 
 # Sitemap location
-Sitemap: https://pablonutrition.com/sitemap.xml
+Sitemap: https://nutritionplustraining.com/sitemap.xml
 
 # Disallow admin/API routes
 Disallow: /api/

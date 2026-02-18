@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 
 // SEO/GEO optimized metadata with statistics and authority signals - Miami Local Focus
 export const metadata: Metadata = {
-  title: "Pablo Lima | #1 Nutrition Coach South Beach & Miami | 100+ Transformations",
+  title: "Nutrition + Training | #1 Nutrition Coach South Beach & Miami | 100+ Transformations",
   description:
     "Miami's top nutrition coach. PRO FIFA licensed nutrition coach Pablo Lima has helped 100+ South Beach & Brickell clients lose 20-80 lbs in 12 weeks. Former Uruguay National Team player. Hablamos Español. Free consultation available.",
   keywords: [
@@ -35,28 +35,28 @@ export const metadata: Metadata = {
     "Pablo Lima nutrition Miami",
     "best nutrition coach Miami",
   ],
-  authors: [{ name: "Pablo Lima", url: "https://pablonutrition.com" }],
+  authors: [{ name: "Pablo Lima", url: "https://nutritionplustraining.com" }],
   creator: "Pablo Lima",
   openGraph: {
-    title: "Pablo Lima | PRO FIFA Licensed Nutrition Coach | 100+ Transformations",
+    title: "Nutrition + Training | PRO FIFA Licensed Nutrition Coach | 100+ Transformations",
     description:
       "Former Uruguay National Team player. PRO FIFA licensed nutrition coach helping Miami transform with proven results—100+ clients, 20-80 lbs lost.",
     type: "website",
     locale: "en_US",
-    siteName: "Pablo Nutrition",
+    siteName: "Nutrition Plus Training",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Pablo Lima - Elite Nutrition Coach Miami",
+        alt: "Nutrition Plus Training - Elite Nutrition Coach Miami",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pablo Lima | PRO FIFA Licensed Nutrition Coach",
-    description: "100+ clients transformed. Former pro athlete. Personalized nutrition coaching in Miami.",
+    title: "Nutrition + Training | PRO FIFA Licensed Nutrition Coach Miami",
+    description: "100+ clients transformed. Former pro athlete. Personalized nutrition coaching & training in Miami.",
   },
   robots: {
     index: true,
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://pablonutrition.com",
+    canonical: "https://nutritionplustraining.com",
   },
 };
 
@@ -75,15 +75,15 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://pablonutrition.com/#organization",
-  name: "Pablo Nutrition",
-  alternateName: "Pablo Lima Nutrition Coaching",
-  description: "PRO FIFA licensed nutrition coach with 100+ client transformations. Former Uruguay National Team player offering personalized nutrition coaching in Miami.",
-  url: "https://pablonutrition.com",
-  logo: "https://pablonutrition.com/logo.png",
-  image: "https://pablonutrition.com/images/pablo-lima.jpg",
+  "@id": "https://nutritionplustraining.com/#organization",
+  name: "Nutrition Plus Training",
+  alternateName: "Nutrition + Training by Pablo Lima",
+  description: "PRO FIFA licensed nutrition coach with 100+ client transformations. Former Uruguay National Team player offering personalized nutrition coaching and training in Miami.",
+  url: "https://nutritionplustraining.com",
+  logo: "https://nutritionplustraining.com/logo.png",
+  image: "https://nutritionplustraining.com/images/pablo-lima.jpg",
   telephone: "+1-305-555-0123",
-  email: "hello@pablonutrition.com",
+  email: "hello@nutritionplustraining.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Miami",
@@ -102,8 +102,8 @@ const organizationSchema = {
   priceRange: "$$",
   openingHours: "Mo-Fr 08:00-18:00",
   sameAs: [
-    "https://instagram.com/pablonutrition",
-    "https://facebook.com/pablonutrition",
+    "https://instagram.com/nutritionplustraining",
+    "https://facebook.com/nutritionplustraining",
   ],
   founder: {
     "@type": "Person",
@@ -126,10 +126,10 @@ const personSchema = {
   name: "Pablo Lima",
   jobTitle: "PRO FIFA Licensed Nutrition Coach",
   description: "Former Uruguay National Team player turned PRO FIFA licensed nutrition coach. Helped 100+ clients lose 20-80 lbs through personalized nutrition programs.",
-  url: "https://pablonutrition.com/about",
-  image: "https://pablonutrition.com/images/pablo-lima.jpg",
+  url: "https://nutritionplustraining.com/about",
+  image: "https://nutritionplustraining.com/images/pablo-lima.jpg",
   sameAs: [
-    "https://instagram.com/pablonutrition",
+    "https://instagram.com/nutritionplustraining",
   ],
   alumniOf: {
     "@type": "SportsTeam",

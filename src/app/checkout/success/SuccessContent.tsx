@@ -180,12 +180,12 @@ export function SuccessContent() {
         >
           <span className="text-sm" style={{ color: "#78716c" }}>Questions?</span>
           <a
-            href="mailto:contact@pablolima.coach"
+            href="mailto:contact@nutritionplustraining.com"
             className="flex items-center gap-1.5 text-sm font-medium"
             style={{ color: "#16a34a" }}
           >
             <Mail className="w-4 h-4" />
-            contact@pablolima.coach
+            contact@nutritionplustraining.com
           </a>
           <a
             href="https://wa.me/13055550123"

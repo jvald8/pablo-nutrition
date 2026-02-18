@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
           email: customerEmail,
           name: customerName,
           metadata: {
-            source: "pablo-nutrition-website",
+            source: "nutritionplustraining-website",
             productInterest: productKey,
           },
         });

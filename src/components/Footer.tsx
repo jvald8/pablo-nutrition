@@ -11,16 +11,16 @@ export function Footer() {
           <div className="sm:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <div 
-                className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xl"
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold"
                 style={{ backgroundColor: "#16a34a", fontFamily: "var(--font-display), Georgia, serif" }}
               >
-                P
+                N+T
               </div>
               <span 
-                className="text-xl"
+                className="text-lg"
                 style={{ fontFamily: "var(--font-display), Georgia, serif" }}
               >
-                Pablo Lima
+                Nutrition <span style={{ color: "#4ade80" }}>+</span> Training
               </span>
             </Link>
             <p className="max-w-sm mb-6" style={{ color: "#a8a29e" }}>
@@ -29,7 +29,7 @@ export function Footer() {
             </p>
             <div className="flex gap-3">
               <a
-                href="https://instagram.com/pablolima.nutrition"
+                href="https://instagram.com/nutritionplustraining"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
@@ -39,7 +39,7 @@ export function Footer() {
                 <Instagram size={18} />
               </a>
               <a
-                href="mailto:contact@pablolima.coach"
+                href="mailto:contact@nutritionplustraining.com"
                 className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
                 style={{ backgroundColor: "#292524" }}
                 aria-label="Email"
@@ -59,7 +59,7 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { href: "/about", label: "About Pablo" },
+                { href: "/about", label: "About" },
                 { href: "/programs", label: "Programs" },
                 { href: "/transformations", label: "Results" },
                 { href: "/contact", label: "Contact" },
@@ -102,12 +102,12 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:contact@pablolima.coach"
+                  href="mailto:contact@nutritionplustraining.com"
                   className="flex items-center gap-2 transition-colors hover:text-white"
                   style={{ color: "#d6d3d1" }}
                 >
                   <Mail size={16} style={{ color: "#22c55e" }} />
-                  contact@pablolima.coach
+                  contact@nutritionplustraining.com
                 </a>
               </li>
             </ul>
@@ -119,7 +119,7 @@ export function Footer() {
       <div style={{ borderTop: "1px solid #292524" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm" style={{ color: "#78716c" }}>
-            © {new Date().getFullYear()} Pablo Lima. All rights reserved.
+            © {new Date().getFullYear()} Nutrition Plus Training. All rights reserved.
           </p>
           <div className="flex items-center gap-4 sm:gap-6 text-sm">
             <span className="badge badge-primary">PRO FIFA License</span>

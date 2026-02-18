@@ -25,9 +25,9 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "contact@pablolima.coach",
+    value: "contact@nutritionplustraining.com",
     subtext: "Usually respond within 24h",
-    href: "mailto:contact@pablolima.coach",
+    href: "mailto:contact@nutritionplustraining.com",
   },
   {
     icon: Clock,
