@@ -55,7 +55,7 @@ export function HeroSection() {
               className="text-lg sm:text-xl mb-6 max-w-lg mx-auto lg:mx-0"
               style={{ color: "#57534e" }}
             >
-              Miami's only PRO FIFA licensed nutritionist. Get beach-ready 
+              Miami's only PRO FIFA licensed nutrition coach. Get beach-ready 
               with personalized nutrition that works with your lifestyle—not against it.{" "}
               <span style={{ color: "#16a34a" }}>Hablamos Español.</span>
             </motion.p>

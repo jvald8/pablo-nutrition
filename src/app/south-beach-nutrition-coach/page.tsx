@@ -26,7 +26,7 @@ const testimonials = [
     name: "Maria S.",
     location: "Brickell",
     result: "Lost 32 lbs",
-    quote: "Finally found a nutritionist who speaks Spanish and gets the Cuban food challenge!",
+    quote: "Finally found a nutrition coach who speaks Spanish and gets the Cuban food challenge!",
   },
   {
     name: "James R.",
@@ -94,7 +94,7 @@ export default function SouthBeachNutritionCoach() {
                 className="text-lg sm:text-xl mb-8"
                 style={{ color: "#a8a29e" }}
               >
-                PRO FIFA licensed nutritionist. Former Uruguay National Team player. 
+                PRO FIFA licensed nutrition coach. Former Uruguay National Team player. 
                 Helping Miami locals lose 20-80 lbs without giving up the foods they love.{" "}
                 <span style={{ color: "#22c55e" }}>Hablamos Español.</span>
               </motion.p>

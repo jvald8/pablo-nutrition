@@ -22,25 +22,25 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Pablo Lima | #1 Nutrition Coach South Beach & Miami | 100+ Transformations",
   description:
-    "Miami's top nutrition coach. PRO FIFA licensed nutritionist Pablo Lima has helped 100+ South Beach & Brickell clients lose 20-80 lbs in 12 weeks. Former Uruguay National Team player. Hablamos Español. Free consultation available.",
+    "Miami's top nutrition coach. PRO FIFA licensed nutrition coach Pablo Lima has helped 100+ South Beach & Brickell clients lose 20-80 lbs in 12 weeks. Former Uruguay National Team player. Hablamos Español. Free consultation available.",
   keywords: [
     "nutrition coach Miami",
-    "nutritionist South Beach",
+    "nutrition coach South Beach",
     "weight loss coach Miami Beach",
-    "sports nutritionist Miami",
+    "sports nutrition coach Miami",
     "Brickell nutrition coach",
     "nutricionista Miami",
     "weight loss South Beach",
-    "Miami personal nutritionist",
+    "Miami personal nutrition coach",
     "Pablo Lima nutrition Miami",
-    "best nutritionist Miami",
+    "best nutrition coach Miami",
   ],
   authors: [{ name: "Pablo Lima", url: "https://pablonutrition.com" }],
   creator: "Pablo Lima",
   openGraph: {
     title: "Pablo Lima | PRO FIFA Licensed Nutrition Coach | 100+ Transformations",
     description:
-      "Former Uruguay National Team player. PRO FIFA licensed nutritionist helping Miami transform with proven results—100+ clients, 20-80 lbs lost.",
+      "Former Uruguay National Team player. PRO FIFA licensed nutrition coach helping Miami transform with proven results—100+ clients, 20-80 lbs lost.",
     type: "website",
     locale: "en_US",
     siteName: "Pablo Nutrition",
@@ -78,7 +78,7 @@ const organizationSchema = {
   "@id": "https://pablonutrition.com/#organization",
   name: "Pablo Nutrition",
   alternateName: "Pablo Lima Nutrition Coaching",
-  description: "PRO FIFA licensed nutritionist with 100+ client transformations. Former Uruguay National Team player offering personalized nutrition coaching in Miami.",
+  description: "PRO FIFA licensed nutrition coach with 100+ client transformations. Former Uruguay National Team player offering personalized nutrition coaching in Miami.",
   url: "https://pablonutrition.com",
   logo: "https://pablonutrition.com/logo.png",
   image: "https://pablonutrition.com/images/pablo-lima.jpg",
@@ -108,8 +108,8 @@ const organizationSchema = {
   founder: {
     "@type": "Person",
     name: "Pablo Lima",
-    jobTitle: "PRO FIFA Licensed Nutritionist",
-    description: "Former Uruguay National Team player with 10+ years of professional football experience. Now helping 100+ clients achieve their weight loss goals.",
+    jobTitle: "PRO FIFA Licensed Nutrition Coach",
+    description: "Former Uruguay National Team player with 10+ years of professional football experience. Now a PRO FIFA licensed nutrition coach helping 100+ clients achieve their weight loss goals.",
     knowsAbout: ["Sports Nutrition", "Weight Loss", "Body Composition", "Performance Nutrition"],
   },
   aggregateRating: {
@@ -124,8 +124,8 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Pablo Lima",
-  jobTitle: "PRO FIFA Licensed Nutritionist",
-  description: "Former Uruguay National Team player turned elite nutrition coach. Helped 100+ clients lose 20-80 lbs through personalized nutrition programs.",
+  jobTitle: "PRO FIFA Licensed Nutrition Coach",
+  description: "Former Uruguay National Team player turned PRO FIFA licensed nutrition coach. Helped 100+ clients lose 20-80 lbs through personalized nutrition programs.",
   url: "https://pablonutrition.com/about",
   image: "https://pablonutrition.com/images/pablo-lima.jpg",
   sameAs: [
@@ -138,7 +138,7 @@ const personSchema = {
   hasCredential: {
     "@type": "EducationalOccupationalCredential",
     credentialCategory: "Professional License",
-    name: "PRO FIFA Nutrition License",
+    name: "PRO FIFA Nutrition Coaching License",
   },
   knowsAbout: [
     "Sports Nutrition",
