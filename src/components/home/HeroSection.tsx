@@ -138,7 +138,7 @@ export function HeroSection() {
               {/* Main image */}
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl h-full">
                 <Image
-                  src="/images/pablo-pro.JPG"
+                  src="/images/bola-trans.png"
                   alt="Pablo Lima - Nutrition and Performance Coach"
                   fill
                   className="object-cover"

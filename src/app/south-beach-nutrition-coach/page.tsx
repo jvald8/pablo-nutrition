@@ -160,7 +160,7 @@ export default function SouthBeachNutritionCoach() {
                 />
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl h-full">
                   <Image
-                    src="/images/pablo-pro.JPG"
+                    src="/images/bola-trans.png"
                     alt="Pablo Lima - South Beach Nutrition Coach"
                     fill
                     className="object-cover"
