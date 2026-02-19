@@ -4,9 +4,9 @@ import Link from "next/link";
 import { Trophy, Globe, Award, Users, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Pablo Lima | Former Uruguay National Team Player",
+  title: "About Pablo Lima | Former Uruguay National Team Player | Nutrition + Training",
   description:
-    "Meet Pablo Lima: 25 international caps for Uruguay, 350+ professional matches, now transforming lives through elite nutrition coaching in Miami.",
+    "Meet Pablo Lima: 25 international caps for Uruguay, 350+ professional matches, now transforming lives through elite nutrition coaching and training in Miami.",
 };
 
 const careerHighlights = [
@@ -16,36 +16,42 @@ const careerHighlights = [
     achievement: "25 International Appearances",
     flag: "🇺🇾",
     featured: true,
+    image: "/images/pablo-uruguay.jpeg",
   },
   {
     team: "Peñarol",
     years: "2014-2016",
     achievement: "League Champion (Apertura 2015)",
     flag: "🇺🇾",
+    image: "/images/pablo-penarol.jpeg",
   },
   {
     team: "Vélez Sarsfield",
     years: "2007-2010, 2013",
     achievement: "Argentina Primera División",
     flag: "🇦🇷",
+    image: "/images/pablo-velez-3.jpeg",
   },
   {
     team: "Danubio FC",
     years: "2004, 2006-2007, 2013-2014",
     achievement: "League Champion (2004)",
     flag: "🇺🇾",
+    image: "/images/pablo-danubio.jpeg",
   },
   {
     team: "Iraklis Thessaloniki",
     years: "2010-2012",
     achievement: "Greek Super League",
     flag: "🇬🇷",
+    image: "/images/pablo-velez-to-iralkis.jpeg",
   },
   {
     team: "Rosario Central",
     years: "2008-2009",
     achievement: "Argentina Primera División",
     flag: "🇦🇷",
+    image: "/images/pablo-quilmes.jpeg",
   },
 ];
 
@@ -174,7 +180,7 @@ export default function AboutPage() {
             {careerHighlights.map((career) => (
               <div
                 key={career.team}
-                className="p-5 sm:p-6 rounded-xl sm:rounded-2xl border"
+                className="rounded-xl sm:rounded-2xl border overflow-hidden"
                 style={{
                   background: career.featured 
                     ? "linear-gradient(135deg, rgba(22, 163, 74, 0.3), rgba(22, 163, 74, 0.1))"
@@ -182,22 +188,37 @@ export default function AboutPage() {
                   borderColor: career.featured ? "#22c55e" : "rgba(255,255,255,0.1)",
                 }}
               >
-                <div className="flex items-start justify-between mb-3 sm:mb-4">
-                  <span className="text-3xl sm:text-4xl">{career.flag}</span>
-                  {career.featured && (
-                    <span 
-                      className="text-xs px-2.5 py-1 rounded-full text-white font-medium"
-                      style={{ backgroundColor: "#22c55e" }}
-                    >
-                      National Team
-                    </span>
-                  )}
+                {career.image && (
+                  <div className="relative aspect-[4/3] w-full">
+                    <Image
+                      src={career.image}
+                      alt={`Pablo Lima playing for ${career.team}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    {career.featured && (
+                      <div className="absolute top-3 right-3">
+                        <span 
+                          className="text-xs px-2.5 py-1 rounded-full text-white font-medium"
+                          style={{ backgroundColor: "#22c55e" }}
+                        >
+                          National Team
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                )}
+                <div className="p-5 sm:p-6">
+                  <div className="flex items-start justify-between mb-2">
+                    <span className="text-2xl">{career.flag}</span>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-1">{career.team}</h3>
+                  <p className="text-sm mb-2" style={{ color: "#a8a29e" }}>{career.years}</p>
+                  <p className="text-sm font-medium" style={{ color: "#4ade80" }}>
+                    {career.achievement}
+                  </p>
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-1">{career.team}</h3>
-                <p className="text-sm mb-2" style={{ color: "#a8a29e" }}>{career.years}</p>
-                <p className="text-sm font-medium" style={{ color: "#4ade80" }}>
-                  {career.achievement}
-                </p>
               </div>
             ))}
           </div>

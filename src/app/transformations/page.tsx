@@ -4,9 +4,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Client Transformations | Pablo Lima Results",
+  title: "Client Transformations | Nutrition + Training Results",
   description:
-    "See real client transformations from Pablo Lima's nutrition coaching. Real people, real results - up to 80 lbs lost in 12 weeks.",
+    "See real client transformations from Nutrition + Training. Real people, real results — over 50-80 lbs lost. Douglas lost 80 lbs, Edu lost 50+ lbs.",
 };
 
 const transformations = [
@@ -22,6 +22,20 @@ const transformations = [
     quote:
       "Working with Pablo completely transformed my approach to nutrition. I lost 80 pounds and gained so much energy!",
     program: "Performance Upgrade",
+    featured: true,
+  },
+  {
+    id: "edu",
+    name: "Edu",
+    location: "Miami, FL",
+    beforeImage: "/images/transformations/edu-before.JPG",
+    afterImage: "/images/transformations/edu-after.JPG",
+    weightLost: "50+ lbs",
+    bodyFat: "-15%",
+    duration: "16 weeks",
+    quote:
+      "I feel like a completely different person. I'm happier, healthier, and have more energy than I've had in years. Pablo's program changed my life.",
+    program: "Habit Builder",
     featured: true,
   },
 ];
@@ -55,9 +69,9 @@ export default function TransformationsPage() {
                 className="text-2xl sm:text-3xl"
                 style={{ fontFamily: "var(--font-display), Georgia, serif", color: "#4ade80" }}
               >
-                80+
+                130+
               </p>
-              <p className="text-xs sm:text-sm" style={{ color: "#a8a29e" }}>Pounds Lost (Douglas)</p>
+              <p className="text-xs sm:text-sm" style={{ color: "#a8a29e" }}>Total Pounds Lost</p>
             </div>
             <div>
               <p 
