@@ -38,6 +38,7 @@ const careerHighlights = [
     achievement: "League Champion (2004)",
     flag: "🇺🇾",
     image: "/images/pablo-danubio.jpeg",
+    objectPosition: "center 20%",
   },
   {
     team: "Iraklis Thessaloniki",
@@ -52,6 +53,7 @@ const careerHighlights = [
     achievement: "Argentina Primera División",
     flag: "🇦🇷",
     image: "/images/pablo-quilmes.jpeg",
+    objectPosition: "center 20%",
   },
 ];
 
@@ -195,6 +197,7 @@ export default function AboutPage() {
                       alt={`Pablo Lima playing for ${career.team}`}
                       fill
                       className="object-cover"
+                      style={career.objectPosition ? { objectPosition: career.objectPosition } : undefined}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     {career.featured && (
