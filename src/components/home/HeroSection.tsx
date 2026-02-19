@@ -136,19 +136,17 @@ export function HeroSection() {
           >
             <div className="relative aspect-[4/5] max-w-sm mx-auto lg:max-w-md">
               {/* Main image */}
-              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl h-full">
+              <div 
+                className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl h-full"
+                style={{ background: "linear-gradient(160deg, #f0fdf4 0%, #dcfce7 40%, #bbf7d0 100%)" }}
+              >
                 <Image
                   src="/images/bola-trans.png"
                   alt="Pablo Lima - Nutrition and Performance Coach"
                   fill
-                  className="object-cover"
+                  className="object-contain object-bottom"
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                {/* Overlay gradient */}
-                <div 
-                  className="absolute inset-0"
-                  style={{ background: "linear-gradient(to top, rgba(28,25,23,0.4) 0%, transparent 50%)" }}
                 />
               </div>
 

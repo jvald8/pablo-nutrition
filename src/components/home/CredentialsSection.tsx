@@ -48,17 +48,18 @@ export function CredentialsSection() {
             viewport={{ once: true }}
             className="relative order-2 lg:order-1"
           >
-            <div className="relative aspect-square max-w-md mx-auto lg:max-w-lg">
+            <div className="relative aspect-[3/4] max-w-md mx-auto lg:max-w-lg">
               <div 
                 className="absolute inset-4 rounded-2xl sm:rounded-3xl"
                 style={{ backgroundColor: "#bbf7d0" }}
               />
-              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl h-full">
                 <Image
-                  src="/images/pablo-pro-2.JPG"
-                  alt="Pablo Lima during his professional career"
+                  src="/images/pablo-uruguay.jpeg"
+                  alt="Pablo Lima representing Uruguay National Team"
                   fill
                   className="object-cover"
+                  style={{ objectPosition: "center 15%" }}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
